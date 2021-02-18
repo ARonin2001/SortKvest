@@ -155,7 +155,6 @@ body {
 }
 
 .overlay {
-  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -302,6 +301,93 @@ body {
   width: 100%;
   height: 50px;
   background-color: green;
+}
+
+.form {
+  padding: 0 0 0 15px;
+}
+
+.form__btn {
+  margin: 15px 0 0 0;
+  color: #000;
+  background-color: #fff;
+  border: 1px solid gray;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-align: center;
+  height: 30px;
+  width: 70px;
+  line-height: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+.form__btn:hover {
+  background-color: gray;
+  color: #fff;
+  -webkit-transition: all .3s;
+  -o-transition: all .3s;
+  transition: all .3s;
+}
+
+.form__input_after {
+  position: relative;
+  max-width: 200px;
+  max-height: 25px;
+}
+
+.form__input_after:hover:after {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 83%;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: red;
+  -webkit-animation: w 1s linear;
+          animation: w 1s linear;
+}
+
+@-webkit-keyframes w {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 83%;
+  }
+}
+
+@keyframes w {
+  from {
+    width: 0%;
+  }
+
+  to {
+    width: 83%;
+  }
+}
+
+#form-parol {
+  margin: 20px 0 0 0;
+}
+
+#form-parol h2 {
+  margin: 10px 0 20px 0;
+  font-size: 1.5em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#parol {
+  position: relative;
+  border-radius: 5px;
+  background-color: #2521217e;
+  color: #fff;
+  padding: 5px 0 5px 10px;
 }
 @supports (-webkit-appearance:none){
 .wrapp{background:url("../img/basket.svg") center center/cover no-repeat}

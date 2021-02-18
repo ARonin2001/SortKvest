@@ -13,7 +13,12 @@ let wrapp = document.querySelector('.wrapp'),
     bookIMG = document.querySelector('.book img'),
     ballIMG = document.querySelector('.ball__img'),
     hoov = document.querySelector('.hoov'),
-    bottom = document.querySelector('.bottom');
+    bottom = document.querySelector('.bottom'),
+    btnForm = document.querySelector('.form__btn'),
+    parol = document.querySelector('#parol'),
+    form = document.querySelector('.form'),
+    inputAfter = document.querySelector('.form__input_after');
+
 
 let questions = {
     title: ["1. В каком году был изобретён баскетбол?", 
@@ -96,6 +101,18 @@ bottom.addEventListener('click', function() {
     openCloseOverlay(3);
     overlayActive();   
 });
+
+// inputAfter.addEventListener('click', function() {
+//     inputAfter.style.after = 
+//     "content: ''; " +
+//     "position: absolute; " +
+//     "display: block; " +
+//     "width: 100px; " +
+//     "height: 2px; " +
+//     "bottom: 0; " +
+//     "left: 0; " +
+//     "background-color: red;";
+// });
 
 // вставка заголовка и ответов
 function openCloseOverlay(number) {
