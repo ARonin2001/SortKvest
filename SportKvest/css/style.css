@@ -155,6 +155,7 @@ body {
 }
 
 .overlay {
+  display: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -212,12 +213,33 @@ body {
   line-height: 2em;
   font-size: 15px;
   font-family: -webkit-pictograph;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
+}
+
+.overlay__answers li:hover {
+  font-size: 1.5rem;
+  -webkit-transition: all .2s;
+  -o-transition: all .2s;
+  transition: all .2s;
 }
 
 .overlay_active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.overlay__advice {
+  color: gray;
+  position: absolute;
+  bottom: 20px;
+  line-height: 1.3rem;
+}
+
+.overlay__advice_active {
+  display: none;
 }
 
 .moon {
@@ -348,8 +370,12 @@ body {
   bottom: -2px;
   left: 0;
   background-color: red;
-  -webkit-animation: w 1s linear;
-          animation: w 1s linear;
+  -webkit-animation: w .2s linear;
+          animation: w .2s linear;
+}
+
+.form_active {
+  display: none;
 }
 
 @-webkit-keyframes w {
@@ -384,11 +410,105 @@ body {
 
 #parol {
   position: relative;
-  border-radius: 5px;
-  background-color: #2521217e;
-  color: #fff;
+  border-radius: 5px 5px 0 0;
+  background-color: #fff;
+  color: #000;
   padding: 5px 0 5px 10px;
+  -webkit-box-shadow: 0 3px 11px 4px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 3px 11px 4px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1440px) {
+  .wrapp {
+    background: url(../img/basket.svg) center center/contain no-repeat;
+  }
+
+  .wrapp .window {
+    top: 27%;
+  }
+
+  .ball {
+    top: 17%;
+  }
+
+  .hoov {
+    top: 25.6rem;
+  }
+
+  .moon {
+    top: 16%;
+    left: 78%;
+  }
+
+  .human {
+    bottom: 18%;
+  }
+
+  .book img {
+    bottom: 26.7%;
+  }
+
+  .bottom {
+    bottom: 11%;
+    height: 100px;
+  }
+
+  .overlay__close {
+    font-size: 2.5rem;
+  }
+
+  .overlay__question {
+    font-size: 2.5rem;
+  }
+
+  .overlay li {
+    font-size: 2rem;
+  }
+
+  .overlay li:hover {
+    font-size: 2rem;
+  }
+
+  .overlay__answers {
+    margin: 5px 0 0 30px;
+  }
+
+  .overlay__advice {
+    line-height: 1.8rem;
+    font-size: 1.5rem;
+  }
+
+  .overlay #form-parol h2 {
+    font-size: 2rem;
+  }
+
+  .overlay #form-parol #parol {
+    width: 225px;
+    height: 37px;
+    border: 1px solid gray;
+    font-size: 2rem;
+  }
+
+  .overlay #form-parol .form__btn {
+    margin-top: 30px;
+    height: 50px;
+    width: 100px;
+    font-size: 19px;
+  }
+
+  .overlay #form-parol .form__input .form__input_after:hover:after {
+    bottom: -11px;
+    width: 225px;
+  }
 }
 @supports (-webkit-appearance:none){
 .wrapp{background:url("../img/basket.svg") center center/cover no-repeat}
+}
+
+ @media (max-width: 1440px){
+
+@supports (-webkit-appearance:none){
+.wrapp{background:url(../img/basket.svg) center center/contain no-repeat}
+}
+
 }
