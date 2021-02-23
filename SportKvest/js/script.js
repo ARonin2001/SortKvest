@@ -17,32 +17,38 @@ let wrapp = document.querySelector('.wrapp'),
     btnForm = document.querySelector('.form__btn'),
     parol = document.querySelector('#parol'),
     form = document.querySelector('.form'),
-    inputAfter = document.querySelector('.form__input_after');
+    inputAfter = document.querySelector('.form__input_after'),
+    advice = document.querySelector('.overlay__advice');
 
 
 let questions = {
     title: ["1. В каком году был изобретён баскетбол?", 
-    "2. Сколько шагов при ведении мяча разрешено в баскетболе?", 
+    "2. Техника владения мячом включает в себя один из следующих приемов:", 
     "3. Высота корзины?", 
     "4. Размер игровой площадки?", 
-    "5. ", 
+    "5. Сколько длится баскетбольный матч?", 
     "6. Основатель баскетбола?", 
-    "7. Сколько длится баскетбольный матч?"],
+    "7. Кол-во игроков на поле одной команды в баскетболе?"],
     answers: [
         ["1900", "1891", "1872", "1723"],
-        ["7", "3", "2", "Сколько угодно"],
+        ["Развороты", "Остановки", "Передача", "Ловлю"],
         ["3,05м", "4м", "3,02м", "2,5м"],
         ["71Х34", "25Х15", "30Х21", "28Х15"],
-        ["SevenQ", "EtchQ", "NineQ", "nani"],
+        ["1-2 часа", "48 минут", "3 часа", "30 минут"],
         ["Оливер Твист", "Майкл Джексон", "Джеймс Нейсмит", "Джон Смит"],
-        ["1-2 часа", "1 час", "3 часа", "30 минут"]
+        ["5", "7", "11", "10"]
     ]
 };
 
 let count = 0;
+const password = "2314231";
+let userPassword;
 
 humanIMG.addEventListener('click', function() {
-    human_msg.classList.toggle("human__msg_active");
+    form.classList.remove('form_active');
+    advice.classList.add('overlay__advice_active');
+    openCloseOverlay(6);
+    overlayActive();
 });
 
 overlay.addEventListener('click', function(event) {
@@ -65,7 +71,7 @@ moon.addEventListener('click', function() {
 });
 
 clock.addEventListener('click', function() {
-    openCloseOverlay(6);
+    openCloseOverlay(4);
     overlayActive();
 });
 
@@ -114,6 +120,15 @@ bottom.addEventListener('click', function() {
 //     "background-color: red;";
 // });
 
+btnForm.addEventListener('click', function() {
+    userPassword = parol.value;
+
+    if(userPassword != "" && userPassword.length == 7) {
+        const user = new Password(userPassword, password);
+        user.checkPassword();
+    }
+});
+
 // вставка заголовка и ответов
 function openCloseOverlay(number) {
     let answerCount = 0;
@@ -126,6 +141,10 @@ function openCloseOverlay(number) {
 }
 function overlayActive() {
     overlay.classList.toggle('overlay_active');
+    if(!overlay.classList.contains('overlay_active')) {
+        form.classList.add('form_active');
+        advice.classList.remove('overlay__advice_active');
+    }
 }
 function moonActive() {
     moon.style.cssText = "left: 150px; "+
