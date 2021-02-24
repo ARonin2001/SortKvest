@@ -501,6 +501,81 @@ body {
     width: 225px;
   }
 }
+
+@media (max-width: 1366px) {
+  .wrapp {
+    background: url(../img/basket.svg) center center/cover no-repeat;
+  }
+
+  .wrapp .window {
+    top: 17%;
+    width: 55px;
+    height: 55px;
+  }
+
+  .wrapp .ball {
+    top: -4%;
+  }
+
+  .wrapp .ball__foliage {
+    height: 35px;
+  }
+
+  .wrapp .ball__img {
+    max-width: 35px;
+  }
+
+  .wrapp .moon {
+    top: 0;
+    left: 74%;
+  }
+
+  .wrapp .hoov {
+    top: 26%;
+  }
+
+  .wrapp .bottom {
+    bottom: 0;
+    max-height: 40px;
+  }
+
+  .wrapp .book img {
+    bottom: 16%;
+  }
+
+  .wrapp .human {
+    bottom: 3%;
+  }
+
+  .overlay__block h2 {
+    font-size: 2rem;
+  }
+
+  .overlay__block ol li {
+    font-size: 1.3rem;
+  }
+
+  .overlay .form #form-parol #parol {
+    width: 200px;
+    height: 29px;
+    font-size: 1rem;
+  }
+
+  .overlay .form #form-parol .form__btn {
+    height: 35px;
+    width: 80px;
+    font-size: 12px;
+  }
+
+  .overlay .form #form-parol .form__input .form__input_after:hover:after {
+    bottom: -5px;
+    width: 200px;
+  }
+
+  .overlay__close {
+    font-size: 1.5rem;
+  }
+}
 @supports (-webkit-appearance:none){
 .wrapp{background:url("../img/basket.svg") center center/cover no-repeat}
 }
@@ -509,6 +584,14 @@ body {
 
 @supports (-webkit-appearance:none){
 .wrapp{background:url(../img/basket.svg) center center/contain no-repeat}
+}
+
+}
+
+ @media (max-width: 1366px){
+
+@supports (-webkit-appearance:none){
+.wrapp{background:url(../img/basket.svg) center center/cover no-repeat}
 }
 
 }
