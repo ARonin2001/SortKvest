@@ -21,6 +21,8 @@ let wrapp = document.querySelector('.wrapp'),
     advice = document.querySelector('.overlay__advice');
 
 
+let sizeWindow = document.innerHTML = screen.width; // get size window
+
 let questions = {
     title: ["1. В каком году был изобретён баскетбол?", 
     "2. Техника владения мячом включает в себя один из следующих приемов:", 
@@ -86,14 +88,26 @@ ballIMG.addEventListener('click', function(event) {
     if(!target.classList.contains('ball__foliage')) {
         count++;
         console.log(count);
-        if(count == 3) {
-            ballIMG.style.cssText = "left: -15.2em; " +
-                "top: 40rem; " +
-                "transition: all .4s";
-        }
-        if(count >= 4) {
-            openCloseOverlay(1);
-            overlayActive();
+        if(sizeWindow <= 1366) {
+            if(count == 3) {
+                ballIMG.style.cssText = "left: -15.2em; " +
+                "top: 28rem; " +
+                "transition: all .2s";
+            }
+            if(count >= 4) {
+                openCloseOverlay(1);
+                overlayActive();
+            }
+        } else {
+            if(count == 3) {
+                ballIMG.style.cssText = "left: -15.2em; " +
+                    "top: 40rem; " +
+                    "transition: all .4s";
+            }
+            if(count >= 4) {
+                openCloseOverlay(1);
+                overlayActive();
+            }
         }
     }
 });
