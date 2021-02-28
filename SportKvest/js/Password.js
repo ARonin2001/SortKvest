@@ -4,10 +4,10 @@ class Password {
         this.password = password;
     }
 
-    checkPassword() {
+    getCheckPassword() {
         if(this.password == this.userpassword)
-            console.log("Ween!");
+            return true;
         else
-            console.log("Not Ween!");
+            return false;
     }
 }

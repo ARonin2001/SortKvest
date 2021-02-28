@@ -1,24 +1,30 @@
 'use strict'
 
+if(window.innerWidth < 1365) {
+    document.querySelector('.wrapp').style.display = "none";
+    const mobile = document.querySelector('.mobile');
+    mobile.classList.add('mobile_active');
+}
+
 let wrapp = document.querySelector('.wrapp'),
     humanIMG = document.querySelector('.human_img'),
-    human_msg = document.querySelector('.human_msg'),
     win = document.querySelector('.window'),
     overlay = document.querySelector('.overlay'),
     closeSpan = document.querySelector('.overlay__close'),
-    overlayQuestion = document.querySelector('.overlay__question'),
+    overlayQuestion = document.querySelector('.overlay__label'),
     answer = document.querySelectorAll('.overlay__answer'),
     moon = document.querySelector('.moon__img'),
-    clock = document.querySelector('.moon__clock'),
+    moonClock = document.querySelector('.moon__clock'),
     bookIMG = document.querySelector('.book img'),
     ballIMG = document.querySelector('.ball__img'),
     hoov = document.querySelector('.hoov'),
     bottom = document.querySelector('.bottom'),
-    btnForm = document.querySelector('.form__btn'),
+    btnForm = document.querySelectorAll('.btn'),
     parol = document.querySelector('#parol'),
     form = document.querySelector('.form'),
     inputAfter = document.querySelector('.form__input_after'),
-    advice = document.querySelector('.overlay__advice');
+    advice = document.querySelector('.overlay__advice'),
+    overlayClock = document.querySelector('.overlay__clock span');
 
 
 let sizeWindow = document.innerHTML = screen.width; // get size window
@@ -44,9 +50,12 @@ let questions = {
 
 let count = 0;
 const password = "2314231";
-let userPassword;
+let userPassword, countAnswer = 0;
+
+let user = new Password(userPassword, password);
 
 humanIMG.addEventListener('click', function() {
+    console.log("sdfsdf");
     form.classList.remove('form_active');
     advice.classList.add('overlay__advice_active');
     openCloseOverlay(6);
@@ -72,7 +81,7 @@ moon.addEventListener('click', function() {
     moonActive();
 });
 
-clock.addEventListener('click', function() {
+moonClock.addEventListener('click', function() {
     openCloseOverlay(4);
     overlayActive();
 });
@@ -87,7 +96,6 @@ ballIMG.addEventListener('click', function(event) {
 
     if(!target.classList.contains('ball__foliage')) {
         count++;
-        console.log(count);
         if(sizeWindow <= 1366) {
             if(count == 3) {
                 ballIMG.style.cssText = "left: -15.2em; " +
@@ -122,26 +130,42 @@ bottom.addEventListener('click', function() {
     overlayActive();   
 });
 
-// inputAfter.addEventListener('click', function() {
-//     inputAfter.style.after = 
-//     "content: ''; " +
-//     "position: absolute; " +
-//     "display: block; " +
-//     "width: 100px; " +
-//     "height: 2px; " +
-//     "bottom: 0; " +
-//     "left: 0; " +
-//     "background-color: red;";
-// });
+btnForm[0].addEventListener('click', checkUserPassword);
 
-btnForm.addEventListener('click', function() {
+btnForm[1].addEventListener('click', function() {
+    if(confirm("Вы действительно хотите начать по новой?")) {
+        location.reload();
+    }
+});
+
+form.addEventListener('keydown', function(event) {
+    if(event.code == 'Enter') {
+        event.preventDefault();
+        checkUserPassword();
+    }
+});
+
+function checkUserPassword() {
     userPassword = parol.value;
 
     if(userPassword != "" && userPassword.length == 7) {
-        const user = new Password(userPassword, password);
-        user.checkPassword();
+        user = new Password(userPassword, password);
+        const clock = document.querySelector('.clock');
+        
+        if(user.getCheckPassword()) {
+            overlay.firstElementChild.classList.add('overlay__block_active');
+            overlay.childNodes[3].classList.remove('overlay__block_active');
+            overlayClock.innerHTML = clock.innerHTML;
+            document.querySelector('.overlay__try span').innerHTML = (countAnswer == 0 ? 1 : countAnswer);
+
+            overlay.style.pointerEvents = "none";
+            overlay.childNodes[3].style.pointerEvents = "auto";
+            wrapp.style.pointerEvents = "none";
+        } 
+    } else if(userPassword != "") {
+        countAnswer++;
     }
-});
+}
 
 // вставка заголовка и ответов
 function openCloseOverlay(number) {
