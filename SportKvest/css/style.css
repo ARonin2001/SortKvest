@@ -109,7 +109,7 @@ body {
   min-height: 40px;
   width: 100%;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -175,9 +175,9 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  font-size: 25px;
+  font-size: 35px;
   color: #fff;
-  padding-top: 40px;
+  padding-top: 60px;
 }
 
 .info,
@@ -206,7 +206,7 @@ body {
   max-height: 50%;
   overflow-y: auto;
   overflow-x: hidden;
-  line-height: 2.1rem;
+  line-height: 2.7rem;
 }
 
 .info {
@@ -216,6 +216,7 @@ body {
 
 .info b {
   line-height: 70px;
+  font-size: 2.5rem;
 }
 
 body {
@@ -262,10 +263,10 @@ body {
   border: 1px solid gray;
   border-radius: 2px;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 15px;
   text-align: center;
   height: 30px;
-  width: 70px;
+  width: 80px;
   line-height: 30px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   -webkit-transition: all .3s;
@@ -289,8 +290,8 @@ body {
 
 .human {
   position: absolute;
-  bottom: 0;
-  right: 19%;
+  bottom: 2%;
+  right: 22%;
   min-height: 10px;
 }
 
@@ -299,7 +300,7 @@ body {
 }
 
 .human img {
-  width: 75%;
+  width: 85%;
 }
 
 .human_msg {
@@ -333,12 +334,12 @@ body {
 .window {
   position: absolute;
   background-color: green;
-  width: 80px;
-  height: 80px;
+  width: 90px;
+  height: 90px;
   max-width: 200px;
   max-height: 200px;
-  left: 11%;
-  top: 16%;
+  left: 11.3%;
+  top: 17%;
 }
 
 .overlay {
@@ -382,7 +383,7 @@ body {
 
 .overlay__close {
   position: absolute;
-  font-size: 1.3rem;
+  font-size: 2rem;
   color: red;
   right: 8px;
   top: 8px;
@@ -390,7 +391,7 @@ body {
 }
 
 .overlay__label {
-  font-size: 2.1rem;
+  font-size: 2.5rem;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -400,7 +401,7 @@ body {
 
 .overlay__answers li {
   line-height: 2em;
-  font-size: 15px;
+  font-size: 20px;
   font-family: -webkit-pictograph;
   -webkit-transition: all .2s;
   -o-transition: all .2s;
@@ -408,7 +409,7 @@ body {
 }
 
 .overlay__answers li:hover {
-  font-size: 1.5rem;
+  font-size: 2rem;
   -webkit-transition: all .2s;
   -o-transition: all .2s;
   transition: all .2s;
@@ -452,10 +453,10 @@ body {
 
 .moon {
   position: relative;
-  width: 130px;
-  height: 130px;
+  width: 160px;
+  height: 160px;
   top: 0;
-  left: 79%;
+  left: 80%;
 }
 
 .moon__img {
@@ -468,16 +469,16 @@ body {
 
 .moon__clock {
   position: absolute;
-  height: 90px;
-  top: 1.5rem;
-  left: 1.4rem;
+  height: 100px;
+  top: 2rem;
+  left: 2rem;
   z-index: 9;
 }
 
 .book img {
   position: absolute;
-  max-width: 60px;
-  max-height: 30px;
+  max-width: 70px;
+  max-height: 40px;
   bottom: 15.90%;
   left: 9%;
 }
@@ -517,11 +518,11 @@ body {
 }
 
 .hoov {
-  width: 115px;
-  height: 13px;
+  width: 150px;
+  height: 15px;
   position: absolute;
   right: 3.3%;
-  top: 14.4rem;
+  top: 18rem;
 }
 
 .bottom {
@@ -545,13 +546,17 @@ body {
   content: '';
   position: absolute;
   display: block;
-  width: 83%;
+  width: 100%;
   height: 2px;
   bottom: -2px;
   left: 0;
   background-color: red;
   -webkit-animation: w .2s linear;
           animation: w .2s linear;
+}
+
+.form__input_after input {
+  width: 100%;
 }
 
 .form_active {
