@@ -98,7 +98,7 @@ ballIMG.addEventListener('click', function(event) {
         count++;
         if(sizeWindow <= 1366) {
             if(count == 3) {
-                ballIMG.style.cssText = "left: -15.2em; " +
+                ballIMG.style.cssText = "left: -13.2em; " +
                 "top: 28rem; " +
                 "transition: all .2s";
             }
@@ -109,7 +109,7 @@ ballIMG.addEventListener('click', function(event) {
         } else {
             if(count == 3) {
                 ballIMG.style.cssText = "left: -15.2em; " +
-                    "top: 40rem; " +
+                    "top: 50rem; " +
                     "transition: all .4s";
             }
             if(count >= 4) {
