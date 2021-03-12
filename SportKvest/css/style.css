@@ -332,6 +332,7 @@ body {
 
 .window {
   position: absolute;
+  background-color: green;
   width: 80px;
   height: 80px;
   max-width: 200px;

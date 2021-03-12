@@ -1,10 +1,10 @@
 'use strict'
 
-if(window.innerWidth < 1365) {
-    document.querySelector('.wrapp').style.display = "none";
-    const mobile = document.querySelector('.mobile');
-    mobile.classList.add('mobile_active');
-}
+// if(window.innerWidth < 1365) {
+//     document.querySelector('.wrapp').style.display = "none";
+//     const mobile = document.querySelector('.mobile');
+//     mobile.classList.add('mobile_active');
+// }
 
 let wrapp = document.querySelector('.wrapp'),
     humanIMG = document.querySelector('.human_img'),
