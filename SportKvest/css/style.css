@@ -135,6 +135,7 @@ body {
   -webkit-transition: all .3s;
   -o-transition: all .3s;
   transition: all .3s;
+  margin: 0 5px 0 5px;
 }
 
 .topa:hover {
@@ -333,9 +334,9 @@ body {
 
 .window {
   position: absolute;
-  background-color: green;
+  background-color: #505e50;
   width: 90px;
-  height: 90px;
+  height: 85px;
   max-width: 200px;
   max-height: 200px;
   left: 11.3%;
@@ -707,13 +708,13 @@ body {
   }
 
   .wrapp .window {
-    top: 17%;
-    width: 55px;
-    height: 55px;
+    top: 17.5%;
+    width: 65px;
+    height: 60px;
   }
 
   .wrapp .ball {
-    top: -4%;
+    top: -3%;
   }
 
   .wrapp .ball__foliage {
