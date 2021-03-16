@@ -99,7 +99,7 @@ ballIMG.addEventListener('click', function(event) {
         if(sizeWindow <= 1366) {
             if(count == 3) {
                 ballIMG.style.cssText = "left: -13.2em; " +
-                "top: 28rem; " +
+                "top: 35rem; " +
                 "transition: all .2s";
             }
             if(count >= 4) {
@@ -153,17 +153,19 @@ function checkUserPassword() {
         const clock = document.querySelector('.clock');
         
         if(user.getCheckPassword()) {
+            countAnswer++;
             overlay.firstElementChild.classList.add('overlay__block_active');
             overlay.childNodes[3].classList.remove('overlay__block_active');
             overlayClock.innerHTML = clock.innerHTML;
-            document.querySelector('.overlay__try span').innerHTML = (countAnswer == 0 ? 1 : countAnswer);
+            document.querySelector('.overlay__try span').innerHTML = countAnswer;
 
             overlay.style.pointerEvents = "none";
             overlay.childNodes[3].style.pointerEvents = "auto";
             wrapp.style.pointerEvents = "none";
-        } 
-    } else if(userPassword != "") {
-        countAnswer++;
+        } else {
+            countAnswer++;
+            console.log(countAnswer);
+        }
     }
 }
 
